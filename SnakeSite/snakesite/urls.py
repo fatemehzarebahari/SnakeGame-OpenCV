@@ -7,6 +7,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('App_Login.urls')),
+    path('playing/',include('Game_App.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

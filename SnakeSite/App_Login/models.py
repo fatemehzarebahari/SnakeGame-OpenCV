@@ -6,5 +6,9 @@ class gameUser(models.Model):
     profile_pic = models.ImageField(upload_to='profile_pics')
     description = models.TextField(max_length=500)
 
+    def __str__(self):
+        return self.user
+
+
 
 
