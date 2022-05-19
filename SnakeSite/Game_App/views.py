@@ -12,6 +12,7 @@ from cvzone.PoseModule import PoseDetector
 from django.http import StreamingHttpResponse
 from django.views.decorators import gzip
 from PIL import Image, ImageFont, ImageDraw
+from models import record
 
 
 class SnakeGame:
@@ -156,6 +157,7 @@ def play(request):
         return StreamingHttpResponse(gen(cap,game,handdet), content_type="multipart/x-mixed-replace;boundary=frame")
     except:
         pass
+    new_record = record()
     return render(request,'game/game_page.html',context={'game_over':True})
 
 
